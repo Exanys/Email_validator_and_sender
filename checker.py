@@ -24,7 +24,7 @@ class Checker:
 
     def validate(self, data: list):
         for i in range(0, len(data[self.email_col])):
-            if str(data[self.email_col][i]) != 'nan' and str(data[self.email_col][i]) != 'Neuvedeno':
+            if str(data[self.email_col][i]) != 'nan' and str(data[self.email_col][i]) != 'Neuvedeno' and str(data[self.email_col][i]) not in self.valid:
                 # print(data[self.email_col][i])
                 if validate_email(data[self.email_col][i], verify=True):
                     self.valid.append([data[self.columns[0]][i], data[self.email_col][i], data[self.columns[2]][i]])
